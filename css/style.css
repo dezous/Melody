@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "Bebas Neue Cyrillic";
+    src: url("../fonts/bebasneueregular.woff2") format("woff2"),
+        url("../fonts/bebasneueregular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 html {
     min-width: 375px;
 }
@@ -5,9 +14,11 @@ html {
 * {
     box-sizing: border-box;
 }
-a{
+
+a {
     text-decoration: none;
 }
+
 ul {
     margin: 0;
     padding: 0;
@@ -75,4 +86,87 @@ body {
     line-height: 20px;
     text-align: right;
     color: #fff;
+}
+
+
+.main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 54px 0 99px 0;
+    display: flex;
+
+}
+
+.main__img {}
+
+.home-img path {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.home-img path:hover {
+    opacity: 1;
+}
+
+.main__info {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 66px 0;
+}
+
+.main__info-title {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    font-size: 37px;
+    line-height: 44px;
+    color: #635854;
+    margin: 0;
+}
+
+.main__info-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.counter-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.counter-btn--up {}
+
+.counter {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    font-size: 124px;
+    color: #635854;
+}
+
+.counter-btn--down {
+    transform: rotateX(-180deg);
+    -webkit-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);
+    -ms-transform: rotateX(-180deg);
+    -o-transform: rotateX(-180deg);
+}
+
+.counter-btn__arrow {}
+
+.button {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    border: none;
+    padding: 16px 36px;
+    cursor:pointer;
+}
+
+.button-primiry {
+    background: #3596F5;
+    border-radius: 6px;
 }
