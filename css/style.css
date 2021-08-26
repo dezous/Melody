@@ -107,7 +107,9 @@ body {
 .home-img path:hover {
     opacity: 1;
 }
-
+path.current-floor{
+    opacity: 1;
+}
 .main__info {
     flex-grow: 1;
     text-align: center;
