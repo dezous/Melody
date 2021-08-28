@@ -52,19 +52,26 @@ $(document).ready(function () {
 
     // При наведении на квартиру на картинке
     apartmentsPath.on('mouseover', function () {
-        apartmentsPath.removeClass('active'); // убираем активный класс у всех квартир на картинке
-        flats.removeClass('active'); // убираем активный класс у всех квартир в списке
         var currentFlat = $(this).attr('data-apartments'); // берем текущий номер квартиры
         $(`[data-flat='${currentFlat}']`).addClass('active'); // ищем такой же в списке и даем активный класс
     });
 
     // При наведении на квартиру в списке
     flats.on('mouseover', function () {
-        apartmentsPath.removeClass('active'); // убираем активный класс у всех квартир в списке
-        flats.removeClass('active');// убираем активный класс у всех квартир на картинке
         var currentFlat = $(this).attr('data-flat'); // берем текущий номер квартиры
         $(`[data-apartments='${currentFlat}']`).addClass('active'); // ищем такой же на картинке и даем активный класс
     });
+
+    // При отведении мыши с квартиры на картинке
+    apartmentsPath.on('mouseleave', function () {
+        flats.removeClass('active'); // убираем активный класс у всех квартир в списке
+
+    })
+
+    // При отведении мыши с квартиры в списке
+    flats.on('mouseleave', function () {
+        apartmentsPath.removeClass('active'); // убираем активный класс у всех квартир на картинке
+    })
 
     function toggleModal() {
         // функция открыть-закрыть окно
