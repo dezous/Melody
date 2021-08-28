@@ -45,12 +45,6 @@ body {
     justify-content: space-between;
 }
 
-.header__navbar-logo {}
-
-.header__navbar-nav {}
-
-.nav {}
-
 .nav__menu {
     display: flex;
     text-align: center;
@@ -68,10 +62,11 @@ body {
     text-align: right;
 }
 
-.contacts {}
+.contacts {
+    font-weight: 400;
+}
 
 .contacts__text {
-    font-weight: 400;
     font-size: 14px;
     line-height: 16px;
     display: block;
@@ -97,8 +92,6 @@ body {
 
 }
 
-.main__img {}
-
 .home-img path {
     opacity: 0;
     cursor: pointer;
@@ -107,9 +100,11 @@ body {
 .home-img path:hover {
     opacity: 1;
 }
-path.current-floor{
+
+path.current-floor {
     opacity: 1;
 }
+
 .main__info {
     flex-grow: 1;
     text-align: center;
@@ -140,9 +135,7 @@ path.current-floor{
     cursor: pointer;
 }
 
-.counter-btn--up {}
-
-.counter {
+.floor-counter {
     font-family: "Bebas Neue Cyrillic", sans-serif;
     font-size: 124px;
     color: #635854;
@@ -156,8 +149,6 @@ path.current-floor{
     -o-transform: rotateX(-180deg);
 }
 
-.counter-btn__arrow {}
-
 .button {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
@@ -165,10 +156,160 @@ path.current-floor{
     color: #FFFFFF;
     border: none;
     padding: 16px 36px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .button-primiry {
     background: #3596F5;
     border-radius: 6px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transition: opacity 0.2s;
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -ms-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+}
+
+.modal.open {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+
+.modal__dialog {
+    position: relative;
+    display: flex;
+    max-width: 1000px;
+    flex-grow: 1;
+    min-height: 565px;
+    background-color: #fff;
+    opacity: 0;
+    transform: translateY(-10%);
+    -webkit-transform: translateY(-10%);
+    -moz-transform: translateY(-10%);
+    -ms-transform: translateY(-10%);
+    -o-transform: translateY(-10%);
+    transition: transform 0.2s;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -ms-transition: transform 0.2s;
+    -o-transition: transform 0.2s;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+.open>.modal__dialog {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+
+.modal__close {
+    position: absolute;
+    right: 27px;
+    top: 38px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+
+.modal__dialog-img {
+    width: 60%;
+    background: #EBEBEB;
+    text-align: center;
+    padding: 50px;
+}
+
+.modal__dialog-title {
+    font-family: 'Bebas Neue Cyrillic', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.modal__dialog-svg {
+    margin-top: 26px;
+}
+
+.flats path {
+    cursor: pointer;
+    opacity: 0;
+}
+
+.flats path:hover,
+.flats path.active {
+    opacity: 1;
+}
+
+.modal__dialog-info {
+    width: 40%;
+    padding: 50px 46px;
+}
+
+.modal__dialog-list {
+    margin-top: 55px;
+
+}
+
+.flats {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.flats__item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.flats__link {
+    font-size: 16px;
+    line-height: 19px;
+    color: #635854;
+}
+
+.flats__link:hover,
+.flats__link.active {
+    color: #3596F5;
+    border-bottom: 1px solid #3596F5
+}
+
+.modal__dialog-note {
+    margin-top: 56px;
+    margin-bottom: 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #635854;
 }
