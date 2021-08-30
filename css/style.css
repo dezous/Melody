@@ -7,7 +7,8 @@
     font-display: swap;
 }
 
-html {
+html,
+body {
     min-width: 375px;
 }
 
@@ -31,17 +32,44 @@ body {
     font-size: 16px;
 }
 
+.lock {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
 .header {
     background-color: #635854;
     border-bottom: 4px solid #3596F5;
 }
 
 .header__navbar {
-    max-width: 1280px;
-    margin: 0 auto;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.header__navbar-panel {
+    flex-grow: 1;
+}
+
+.header__navbar-panelcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__navbar-button {
+    display: none;
+}
+
+.header__navbar-nav {
+    margin: 0 auto;
 }
 
 .nav__menu {
@@ -95,11 +123,15 @@ body {
 
 
 .main {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 54px 0 99px 0;
+    padding-top: 54px;
+    padding-bottom: 99px;
     display: flex;
 
+}
+
+.home-img {
+    width: 100%;
+    max-width: 734px;
 }
 
 .home-img path {
@@ -180,11 +212,14 @@ path.current-floor {
 }
 
 .footer__container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 50px 0 56px 0;
+    padding-top: 50px;
+    padding-bottom: 56px;
     display: flex;
     justify-content: space-between;
+}
+
+.footer__left {
+    flex: 1 1 50%;
 }
 
 .footer__left,
@@ -222,8 +257,6 @@ path.current-floor {
     color: #3596F5;
 }
 
-.footer__left-soc {}
-
 .soc,
 .footer-nav__menu {
     display: flex;
@@ -246,7 +279,14 @@ path.current-floor {
     fill: #3596F5;
 }
 
-.footer__right-nav {}
+.footer__right {
+    flex: 1 1 50%;
+
+}
+
+.footer__right-nav {
+    margin-left: auto;
+}
 
 .footer-nav {
     font-family: 'Roboto';
@@ -254,10 +294,20 @@ path.current-floor {
     line-height: 19px;
 }
 
+.footer-nav__menu {
+    flex-wrap: wrap;
+    margin: -5px 0;
+}
+
+.footer-nav__menu-item {
+    padding: 5px 0;
+}
+
 .footer-nav__menu-item:not(:last-child) {
     margin-right: 20px;
 }
-.footer-nav__menu-item>a{
+
+.footer-nav__menu-item>a {
     color: #635854;
     text-decoration: underline;
     transition: color 0.2s;
@@ -266,9 +316,11 @@ path.current-floor {
     -ms-transition: color 0.2s;
     -o-transition: color 0.2s;
 }
-.footer-nav__menu-item>a:hover{
+
+.footer-nav__menu-item>a:hover {
     color: #3596F5;
 }
+
 .modal {
     position: fixed;
     top: 0;
@@ -367,6 +419,11 @@ path.current-floor {
     margin-top: 26px;
 }
 
+.flats {
+    width: 100%;
+    max-width: 433px;
+}
+
 .flats path {
     cursor: pointer;
     opacity: 0;
@@ -417,4 +474,193 @@ path.current-floor {
     font-size: 16px;
     line-height: 19px;
     color: #635854;
+}
+
+@media screen and (max-width:1200px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .nav__menu-item {
+        margin: 0 10px 0 10px;
+    }
+
+    .main__info {
+        margin-left: 40px;
+    }
+
+    .footer__left-logo {
+        margin-right: 27px;
+    }
+
+    .footer__left-tell {
+        margin-right: 25px;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .container {
+        max-width: 760px;
+    }
+
+    .header {
+        padding: 12px 0;
+    }
+
+    .header__navbar-panel {
+        position: absolute;
+        top: 48px;
+        right: 14px;
+        z-index: 99;
+        background-color: #635854;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.5s, max-height 0.5s;
+        -webkit-transition: opacity 0.5s, max-height 0.5s;
+        -moz-transition: opacity 0.5s, max-height 0.5s;
+        -ms-transition: opacity 0.5s, max-height 0.5s;
+        -o-transition: opacity 0.5s, max-height 0.5s;
+    }
+
+    .header__navbar-panelcontainer {
+        flex-direction: column;
+        padding: 0 20px 20px 20px;
+    }
+
+    .header__navbar-panel.active {
+        opacity: 1;
+        max-height: 1000px;
+    }
+
+    .header__navbar-button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        width: 40px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .header__navbar-button>span {
+        width: 100%;
+        height: 3px;
+        background-color: #FFFFFF;
+        display: block;
+    }
+
+    .nav__menu {
+        flex-direction: column;
+    }
+
+    .nav__menu-item {
+        margin: 5px 0;
+    }
+
+    .header__navbar-contacts {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .main {
+        padding-top: 107px;
+        padding-bottom: 107px;
+    }
+
+    .main__info {
+        padding: 0;
+    }
+
+    .footer__left {
+        flex: 1 1 60%;
+    }
+
+    .footer__right {
+        flex: 1 1 40%;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    .main {
+        display: block;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .main__info {
+        margin-left: 0;
+        margin-top: 50px;
+        padding: 25px 45px;
+    }
+
+    .main__info-counter {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .modal {
+        overflow-y: auto;
+        display: block;
+    }
+
+    .modal__dialog {
+        flex-direction: column;
+    }
+
+    .modal__dialog-img,
+    .modal__dialog-info {
+        width: 100%;
+    }
+
+    .flats {
+        max-width: 250px;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer__left {
+        margin-bottom: 40px;
+    }
+
+    .footer__right-nav {
+        margin-right: auto;
+    }
+
+}
+
+@media screen and (max-width:576px) {
+    .footer__left {
+        margin-bottom: 25px;
+    }
+
+    .footer__left,
+    .footer-nav__menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer__left-logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .footer__left-tell {
+        margin-right: 0;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .footer-nav__menu .footer-nav__menu-item {
+        margin-right: 0;
+    }
 }
