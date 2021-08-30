@@ -33,7 +33,6 @@ body {
 
 .header {
     background-color: #635854;
-    padding: 12px 0 12px 0;
     border-bottom: 4px solid #3596F5;
 }
 
@@ -55,7 +54,18 @@ body {
 }
 
 .nav__menu-link {
+    display: block;
+    padding: 9px 16px;
     color: #fff;
+    transition: background 0.2s;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+    -ms-transition: background 0.2s;
+    -o-transition: background 0.2s;
+}
+
+.nav__menu-link:hover {
+    background: #3596F5;
 }
 
 .header__navbar-contacts {
@@ -164,6 +174,101 @@ path.current-floor {
     border-radius: 6px;
 }
 
+.footer {
+    background: #D7D7D7;
+    border-top: 4px solid #3596F5;
+}
+
+.footer__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 50px 0 56px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__left,
+.footer__right {
+    display: flex;
+    align-items: center;
+}
+
+.footer__left-logo {
+    margin-right: 37px;
+}
+
+.footer__left-tell {
+    margin-right: 59px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.footer__left-tell>p>a {
+    display: block;
+    margin-top: 5px;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #635854;
+    transition: color 0.2s;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -ms-transition: color 0.2s;
+    -o-transition: color 0.2s;
+}
+
+.footer__left-tell>p>a:hover {
+    color: #3596F5;
+}
+
+.footer__left-soc {}
+
+.soc,
+.footer-nav__menu {
+    display: flex;
+    align-items: center;
+}
+
+.soc__item:not(:last-child) {
+    margin-right: 15px;
+}
+
+.soc__item path {
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+.soc__item a:hover>svg>path {
+    fill: #3596F5;
+}
+
+.footer__right-nav {}
+
+.footer-nav {
+    font-family: 'Roboto';
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.footer-nav__menu-item:not(:last-child) {
+    margin-right: 20px;
+}
+.footer-nav__menu-item>a{
+    color: #635854;
+    text-decoration: underline;
+    transition: color 0.2s;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -ms-transition: color 0.2s;
+    -o-transition: color 0.2s;
+}
+.footer-nav__menu-item>a:hover{
+    color: #3596F5;
+}
 .modal {
     position: fixed;
     top: 0;
